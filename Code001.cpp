@@ -11,7 +11,7 @@ struct Cal {
 
 
 void KeyBoard(string &str) {
-	
+
 	cout << "Enter : ";
 	cin >> str;
 
@@ -19,7 +19,7 @@ void KeyBoard(string &str) {
 
 void BuildList(string str, Cal* &head, bool &valid) {
 
-	size_t i, len = str.size();
+	size_t i, len = str.length();
 	int number = 0;
 	char operation = '+';
 	Cal* temp;
@@ -33,7 +33,7 @@ void BuildList(string str, Cal* &head, bool &valid) {
 		}
 
 		else if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/' || str[i] == 0) {
-			
+
 			Cal* c = new Cal{ operation, number, NULL };
 
 			if (head == NULL) {
@@ -59,9 +59,9 @@ void BuildList(string str, Cal* &head, bool &valid) {
 	}
 }
 
-void Compute(Cal* head, bool &valid, int &result) {
+void Compute(Cal* head, bool &valid, float &result) {
 	Cal* temp = head;
-	
+
 	result = 0;
 
 	while (valid && temp != NULL) {
@@ -87,29 +87,29 @@ void Compute(Cal* head, bool &valid, int &result) {
 
 		temp = temp->next;
 	}
-	
+
 }
 
-void PrintList(Cal* head, bool valid, int result) {	
+void PrintList(Cal* head, bool valid, float result) {
 
 	Cal* temp = head;
 
 	while (valid && temp != NULL) {
-			cout << "[" << temp->op << "] " << temp->num << endl;
-			temp = temp->next;
+		cout << "[" << temp->op << "] " << temp->num << endl;
+		temp = temp->next;
 	}
 
 	if (valid) { cout << "[=]" << result; }
 	else { cout << "Infinity :("; }
-	  
+
 }
 
 int main() {
 
 	string input;
 	Cal* head;
-	bool valid=true;
-	int result=0;
+	bool valid = true;
+	float result = 0;
 
 	KeyBoard(input);
 	BuildList(input, head, valid);
