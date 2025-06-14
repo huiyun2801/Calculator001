@@ -113,7 +113,7 @@ int main() {
 
 	KeyBoard(input);
 	BuildList(input, head, valid);
-	//Compute(head, valid, result);
+	Compute(head, valid, result);
 	PrintList(head, valid, result);
 
 	return 0;
