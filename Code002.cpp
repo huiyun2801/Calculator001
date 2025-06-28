@@ -18,14 +18,11 @@ void Calculator::InsertNode(Calculator* &head){
   Calculator* C = new Calculator (4,NULL);
 
   if(head=NULL) head = C;
-
   else {
     temp = head;
-
     while(temp->next != NULL){
-      temp
-      
-      }
+      temp = temp->next;      
+    }
   }
 }
 
