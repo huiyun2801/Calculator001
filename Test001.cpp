@@ -1,4 +1,14 @@
 #include <iostream>
 using namespace std;
 
-struct 
+struct Node {
+  int num;
+  Node* next;
+};
+
+int main(){
+  Node* head, * tail, * mover;
+  
+  
+  return 0;
+} 
