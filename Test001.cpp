@@ -15,7 +15,7 @@ int main(){
   for(i=1;i<=15;i++){
     Node* N = new Node {i,NULL};
 
-    if(head=NULL) {
+    if(head==NULL) {
       head=N;      
     }
     else {
@@ -26,7 +26,7 @@ int main(){
   }
 
   mover=head;
-  while (mover->next!=NULL){
+  while (mover!=NULL){
     cout<<mover->num<<"]";
     mover=mover->next;
   }
