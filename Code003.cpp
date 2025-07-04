@@ -17,14 +17,14 @@ void KeyBoard(string &str) {
 
 }
 
-void BuildList(string str, Cal* &head, bool &valid) {
+void BuildList(string str, Cal* &head, Cal* &tail, bool &valid) {
 
 	size_t i, len = str.length();
 	int number = 0;
 	char operation = '+';
 	Cal* temp;
 
-	head = temp = NULL;
+	head = temp = tail = NULL;
 
 	for (i = 0, valid = true; valid && i <= len; i++) {
 
@@ -41,12 +41,10 @@ void BuildList(string str, Cal* &head, bool &valid) {
 			}
 
 			else {
-				temp = head;
-				while (temp->next != NULL) {
-					temp = temp->next;
-				}
+				temp = tail;
 				temp->next = c;
 			}
+			tail = c;
 			operation = str[i];
 			number = 0;
 		}
@@ -107,12 +105,12 @@ void PrintList(Cal* head, bool valid, float result) {
 int main() {
 
 	string input;
-	Cal* head;
+	Cal* head, * tail;
 	bool valid = true;
 	float result = 0;
 
 	KeyBoard(input);
-	BuildList(input, head, valid);
+	BuildList(input, head, tail, valid);
 	Compute(head, valid, result);
 	PrintList(head, valid, result);
 
