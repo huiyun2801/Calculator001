@@ -13,5 +13,8 @@ void BuildList(Node* &head, Node* &tail) {
   Node* move;
 
   head = tail = move = NULL;
+
+  while ( 
+  
   
 }
