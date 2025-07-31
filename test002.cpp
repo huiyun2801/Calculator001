@@ -32,7 +32,7 @@ void PrintList(Node* head){
 
 	Node* move = head;
 
-	while(move!=NULL){
+	while(move->next!=NULL){
   	cout << move->num << " :: " << move->next->num << endl;
 		move = move->next;
 	}
