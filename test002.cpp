@@ -25,12 +25,32 @@ for(i=0;i<20;i+=2;){
       move = tail;
       move-next = n;
     }
-
-    tail = n;
-    
+    tail = n;    
   }
 }
   
-  
+}
+void PrintList(Node* head){
+
+Node* move = head;
+
+while(move!=NULL){
+  cout << move->num << " :: " << move->next->num << endl;
+}
   
 }
+
+int main() {
+	
+	Node* head, * tail;
+	bool valid = true;
+	float result = 0;
+
+	BuildList(head, tail);
+	PrintList(head);
+
+	return 0;
+}
+  
+  
+
