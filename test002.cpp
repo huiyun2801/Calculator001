@@ -10,30 +10,31 @@ struct Node {
 
 void BuildList(Node* &head, Node* &tail) {
 
-int i;
-Node* move;
+	int i;
+	Node* move;
 
-head = tail = NULL;
+	head = tail = NULL;
 
-for(i=0;i<20;i+=2){
-	Node* n = new Node{i, NULL};
+	for(i=0;i<20;i+=2){
+		Node* n = new Node{i, NULL};
   
-	if(head==NULL){head = n;}
-    	else{
-      		move = tail;
-      		move->next = n;
+		if(head==NULL){head = n;}
+		else{
+  		move = tail;
+    	move->next = n;
    	}
-    	tail = n;    
-  }
+  
+		tail = n;    
+	}
 }
   
 void PrintList(Node* head){
 
-Node* move = head;
+	Node* move = head;
 
-while(move!=NULL){
-  cout << move->num << " :: " << move->next->num << endl;
-}
+	while(move!=NULL){
+  	cout << move->num << " :: " << move->next->num << endl;
+	}
   
 }
 
