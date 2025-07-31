@@ -15,7 +15,7 @@ Node* move;
 
 head = tail = move = NULL;
 
-for(i=0;i<20;i+=2;){
+for(i=0;i<20;i+=2){
 
   Node* n = new Node{i, NULL);
   
