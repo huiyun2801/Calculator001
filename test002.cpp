@@ -15,7 +15,7 @@ void BuildList(Node* &head, Node* &tail) {
 
 	head = tail = NULL;
 
-	for(i=0;i<20;i+=2){
+	for(i=0; i<20; i+=2){
 		Node* n = new Node{i, NULL};
   
 		if(head==NULL){head = n;}
@@ -34,6 +34,7 @@ void PrintList(Node* head){
 
 	while(move!=NULL){
   	cout << move->num << " :: " << move->next->num << endl;
+		move = move->next;
 	}
   
 }
