@@ -45,6 +45,24 @@ void BuildList (string input, Cal* &head, Cal* &tail, bool &valid){
   
 }
 
+void Compute(Cal* head, bool &valid, float &result) {
+	Cal* move, *start, * end;
+
+	move = head;
+	
+	while(move != NULL){
+		if (temp->next->op = '*' || temp->next->op = '/'){
+			result = temp->num;
+			start = temp;
+			
+			switch (temp->next->op){
+			case '*': result *= temp->next->num; break;
+			case '/': result /= temp->next->num; break;
+			default: break;
+			}
+	}
+}
+
 void PrintList(Cal* head, bool valid, float result) {
 
 	Cal* move = head;
