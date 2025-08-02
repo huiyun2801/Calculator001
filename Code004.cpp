@@ -29,7 +29,7 @@ void BuildList (string input, Cal* &head, Cal* &tail, bool &valid){
       Cal* c = new Cal {operation, number, NULL};
 
       if(head==NULL) {head = c;}
-      else {tail.next = c;}
+      else {tail->next = c;}
       
       tail = c;
     }
