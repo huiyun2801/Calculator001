@@ -23,7 +23,7 @@ void BuildList (string input, Cal* &head, Cal* &tail, bool &valid){
   head = tail = NULL;
 
   for (i=0, valid=true; valid && i<=len; i++){
-    if (input[i]>47 && input[i]<58) {number = number * 10 + input[i];}
+    if (input[i]>47 && input[i]<58) {number = number * 10 + input[i] - 48;}
     
     else if (input[i] == '+' || input[i] == '-' || input[i] == '*' || input[i] == '/' || input[i] == 0) {
       Cal* c = new Cal {operation, number, NULL};
