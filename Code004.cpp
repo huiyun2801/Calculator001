@@ -32,6 +32,9 @@ void BuildList (string input, Cal* &head, Cal* &tail, bool &valid){
       else {tail->next = c;}
       
       tail = c;
+			number = 0;
+			operation = input[i];
+	    
     }
 
     else {
