@@ -57,7 +57,7 @@ void Compute(Cal* head, bool &valid, float &result) {
 			else {valid = false;}
 			
 			}
-		else if (move->next->op == '+' || move->next->op == '-'){
+		else if ((move->next->op == '+' || move->next->op == '-') && start!=NULL){
 			start->next = move->next;
 			start = NULL;
 		}
