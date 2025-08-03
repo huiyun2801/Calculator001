@@ -52,8 +52,8 @@ void Compute(Cal* head, bool &valid, float &result) {
 		if (move->next->op == '*' || move->next->op == '/'){
 			if(start==NULL) {start = move;}
 
-			if(move->next->op = '*') {start->num *= move->next->num;}
-			else if (move->next->op = '/' && move->next->num != 0) {start->num /= move->next->num;}
+			if(move->next->op == '*') {start->num *= move->next->num;}
+			else if (move->next->op == '/' && move->next->num != 0) {start->num /= move->next->num;}
 			else {valid = false;}
 			
 			}
