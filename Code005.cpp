@@ -46,17 +46,17 @@ void BuildList (string input, Cal* &head, Cal* &tail, bool &valid){
 
 void Compute(Cal* head, bool &valid, float &result) {
 	Cal* move, *start, * end;
-	// for(move=head, start=NULL; valid && move!=NULL; move=move->next
-
+	
 	for(move=head, start=NULL; valid && move->next!=NULL; move=move->next){
+		
 		if (move->next->op == '*' || move->next->op == '/'){
 			if(start==NULL) {start = move;}
 
 			if(move->next->op == '*') {start->num *= move->next->num;}
 			else if (move->next->op == '/' && move->next->num != 0) {start->num /= move->next->num;}
-			else {valid = false;}
+			else {valid = false;}			
+		}
 			
-			}
 		else if ((move->next->op == '+' || move->next->op == '-') && start!=NULL){
 			start->next = move->next;
 			start = NULL;
