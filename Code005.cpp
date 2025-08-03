@@ -49,9 +49,9 @@ void Compute(Cal* head, bool &valid, float &result) {
 
 	move = head;
 
-	/* for(move=head, start=NULL; valid && move!=NULL; move=move->next){} */ 
+	// for(move=head, start=NULL; valid && move!=NULL; move=move->next
 
-	while(move != NULL){
+	for(move=head, start=NULL; valid && move!=NULL; move=move->next){
 		if (move->next->op == '*' || move->next->op == '/'){
 			if(start==NULL) {start = move;}
 
