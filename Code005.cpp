@@ -17,7 +17,6 @@ void BuildList (string input, Cal* &head, Cal* &tail, bool &valid){
   int i, len;
   char operation = '+';
   float number = 0;
-  Cal* move;
 
   len = input.length();
   head = tail = NULL;
@@ -49,17 +48,22 @@ void Compute(Cal* head, bool &valid, float &result) {
 	Cal* move, *start, * end;
 
 	move = head;
-	
+
+	/* for(move=head, start=NULL; valid && move!=NULL; move=move->next){} */ 
+
 	while(move != NULL){
-		if (temp->next->op = '*' || temp->next->op = '/'){
-			result = temp->num;
-			start = temp;
+		if (move->next->op = '*' || move->next->op = '/'){
+			if(start==NULL) {start = move;}
+
+			if(move->next->op = '*') {start->num *= move->next->num;}
+			else if (move->next->op = '/' && move->next->num != 0) {start->num /= move->next->num;}
+			else {valid = false;}
 			
-			switch (temp->next->op){
-			case '*': result *= temp->next->num; break;
-			case '/': result /= temp->next->num; break;
-			default: break;
 			}
+		else if (move->next->op = '+' || move->next->op = '-'){
+			start->next = move->next;
+			start = NULL;
+		}
 	}
 }
 
