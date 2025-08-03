@@ -90,7 +90,7 @@ int main() {
 
 	KeyBoard(input);
 	BuildList(input, head, tail, valid);
-	
+	Compute(head, valid, result);
 	PrintList(head, valid, result);
 
 	return 0;
