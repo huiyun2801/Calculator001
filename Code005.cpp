@@ -52,7 +52,7 @@ void Compute(Cal* head, bool &valid, float &result) {
 	/* for(move=head, start=NULL; valid && move!=NULL; move=move->next){} */ 
 
 	while(move != NULL){
-		if (move->next->op = '*' || move->next->op = '/'){
+		if (move->next->op == '*' || move->next->op == '/'){
 			if(start==NULL) {start = move;}
 
 			if(move->next->op = '*') {start->num *= move->next->num;}
@@ -60,7 +60,7 @@ void Compute(Cal* head, bool &valid, float &result) {
 			else {valid = false;}
 			
 			}
-		else if (move->next->op = '+' || move->next->op = '-'){
+		else if (move->next->op == '+' || move->next->op == '-'){
 			start->next = move->next;
 			start = NULL;
 		}
