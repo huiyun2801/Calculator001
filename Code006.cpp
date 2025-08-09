@@ -45,19 +45,21 @@ void BuildList (string input, Cal* &head, Cal* &tail, bool &valid){
 }
 
 void Compute(Cal* head, bool &valid, float &result) {
-	Cal* move, *start, * end;
+	Cal* move, * start, * end;
+	char operation;
 	
 	for(move=head, start=NULL; valid && move->next!=NULL; move=move->next){
-		
-		if (move->next->op == '*' || move->next->op == '/'){
+
+		operation = move->next->op;
+		if (operation == '*' || operation == '/'){
 			if(start==NULL) {start = move;}
 
-			if(move->next->op == '*') {start->num *= move->next->num;}
-			else if (move->next->op == '/' && move->next->num != 0) {start->num /= move->next->num;}
+			if(operation == '*') {start->num *= move->next->num;}
+			else if (operation == '/' && move->next->num != 0) {start->num /= move->next->num;}
 			else {valid = false;}			
 		}
 			
-		else if ((move->next->op == '+' || move->next->op == '-') && start!=NULL){
+		else if ((operation == '+' || operation == '-') && start!=NULL){
 			start->next = move->next;
 			start = NULL;
 		}
