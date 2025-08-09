@@ -51,14 +51,15 @@ void Compute(Cal* head, bool &valid, float &result) {
 	for(move=head, start=NULL; valid && move->next!=NULL; move=move->next){
 
 		operation = move->next->op;
-		if (operation == '*' || operation == '/'){
-			if(start==NULL) {start = move;}
-
-			if(operation == '*') {start->num *= move->next->num;}
-			else if (operation == '/' && move->next->num != 0) {start->num /= move->next->num;}
-			else {valid = false;}			
-		}
-			
+		start = move;
+		
+		if(operation == '*') {start->num *= move->next->num;}
+		
+		else if (operation == '/') {
+			if (move->next->num!=0) {start->num /= move->next->num;}
+			else {valid = false;}
+		}	
+					
 		else if ((operation == '+' || operation == '-') && start!=NULL){
 			start->next = move->next;
 			start = NULL;
