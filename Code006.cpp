@@ -60,7 +60,7 @@ void Compute(Cal* head, bool &valid, float &result) {
 		}
 		
 		else {
-			if (start != NULL) {start = move;}
+			if (start == NULL) {start = move;}
 			
 			if(operation == '*') {start->num *= move->next->num;}
 		
